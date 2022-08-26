@@ -31,32 +31,29 @@ const Notify = () => {
   return (
     <View>
       <TouchableOpacity
-      style={styles.button}
-       onPress={() => onDisplayNotification()} 
-       >
+        style={styles.button}
+        onPress={() => onDisplayNotification()}>
         <Text style={styles.buttonTxt}> Notifie-moi !</Text>
-        </TouchableOpacity>
+      </TouchableOpacity>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-    button: {
-        backgroundColor: Colors.primary,
-        borderRadius: 20,
-        padding: 10,
-        elevation: 2,
-        margin: 2,
-        width: '50%',
-        display: 'flex',
-        alignSelf: 'center',
-    },
-    buttonTxt: {
-        color: Colors.white,
-        textAlign: 'center',
-    },
-
-
+  button: {
+    backgroundColor: Colors.primary,
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2,
+    margin: 2,
+    width: '50%',
+    display: 'flex',
+    alignSelf: 'center',
+  },
+  buttonTxt: {
+    color: Colors.white,
+    textAlign: 'center',
+  },
 });
 
 export default Notify;

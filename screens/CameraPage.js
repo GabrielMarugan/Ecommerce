@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {
   Image,
   Pressable,
@@ -11,10 +11,10 @@ import {
 } from 'react-native';
 
 import Colors from '../Colors';
-import { useCameraDevices, Camera } from 'react-native-vision-camera';
+import {useCameraDevices, Camera} from 'react-native-vision-camera';
 import Prevu from './Prevu';
 
-const CameraPage = ({ route, navigation }) => {
+const CameraPage = ({route, navigation}) => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const utilisateur = route.params;
@@ -28,7 +28,7 @@ const CameraPage = ({ route, navigation }) => {
 
   async function onPressButton() {
     const photo = await camera.current.takePhoto();
-    setImageUri("file://" + photo.path);
+    setImageUri('file://' + photo.path);
     console.log(photo.path);
   }
 
@@ -46,10 +46,7 @@ const CameraPage = ({ route, navigation }) => {
           style={StyleSheet.absoluteFill}
           photo={true}
           device={device}
-          isActive={true}>
-
-
-        </Camera>
+          isActive={true}></Camera>
         <Pressable onPress={onPressButton} style={styles.buttonPhoto}>
           <View style={styles.buttonCircle}></View>
         </Pressable>
@@ -60,8 +57,6 @@ const CameraPage = ({ route, navigation }) => {
     );
   }
 };
-
-
 
 const styles = StyleSheet.create({
   button: {
@@ -84,7 +79,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     alignSelf: 'center',
     bottom: 5,
-
   },
   buttonCircle: {
     width: 50,
@@ -93,7 +87,6 @@ const styles = StyleSheet.create({
     borderWidth: 4,
     borderColor: 'white',
     backgroundColor: '#eee',
-
   },
   container: {
     display: 'flex',

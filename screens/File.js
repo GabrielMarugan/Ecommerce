@@ -86,13 +86,13 @@ const File = ({navigation}) => {
         <Text style={styles.buttonTxt}> Selection 1 fichier </Text>
       </TouchableOpacity>
       {fileResponse.map((file, index) => (
-          <Text 
+        <Text
           key={index.toString()}
           style={styles.container}
           ellipsizeMode={'middle'}>
-              File Name: {file.name ? file.name : ''}
-              {'\n'}
-              URI: {file.uri ? file.uri : ''}
+          File Name: {file.name ? file.name : ''}
+          {'\n'}
+          URI: {file.uri ? file.uri : ''}
         </Text>
       ))}
       <TouchableOpacity
