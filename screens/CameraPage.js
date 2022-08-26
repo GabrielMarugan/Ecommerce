@@ -1,24 +1,11 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {
-  Image,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  useColorScheme,
-  View,
-} from 'react-native';
+import React, {useRef, useState} from 'react';
+import {Pressable, ScrollView, StyleSheet, Text, View} from 'react-native';
 
 import Colors from '../Colors';
 import {useCameraDevices, Camera} from 'react-native-vision-camera';
 import Prevu from './Prevu';
 
-const CameraPage = ({route, navigation}) => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const utilisateur = route.params;
-
+const CameraPage = ({navigation}) => {
   const devices = useCameraDevices();
   const device = devices.back;
 
@@ -46,12 +33,13 @@ const CameraPage = ({route, navigation}) => {
           style={StyleSheet.absoluteFill}
           photo={true}
           device={device}
-          isActive={true}></Camera>
+          isActive={true}
+        />
         <Pressable onPress={onPressButton} style={styles.buttonPhoto}>
-          <View style={styles.buttonCircle}></View>
+          <View style={styles.buttonCircle} />
         </Pressable>
         <View style={styles.preview}>
-          <Prevu source={imageUri}></Prevu>
+          <Prevu source={imageUri} />
         </View>
       </>
     );
