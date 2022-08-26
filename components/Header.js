@@ -23,7 +23,7 @@ const Header = () => {
             color: isDarkMode ? Colors.white : Colors.black,
           },
         ]}>
-        Demo ecommerce
+        Demo
       </Text>
     </ImageBackground>
   );

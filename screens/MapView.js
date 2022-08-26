@@ -28,8 +28,8 @@ const MapView = ({ coords }) => {
                 initialCamera={{
                     altitude: 300000,
                     center: {
-                        latitude: 49.1068482,
-                        longitude: 6.1764103,
+                        latitude: 42,
+                        longitude: 42,
                     },
                     heading: 0,
                     pitch: 0,

@@ -1,13 +1,13 @@
 /* eslint-disable prettier/prettier */
-import { Alert, Linking, PermissionsAndroid, Platform, SafeAreaView, StyleSheet, Text, ToastAndroid, useColorScheme, View } from 'react-native';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import {  Button, SafeAreaView, StyleSheet, Text, useColorScheme, View } from 'react-native';
+import React, { useState } from 'react';
 import Colors from '../Colors';
 
 
 import MapView from './MapView';
 
 
-const Detail = ({ route}) => {
+const Detail = ({ route }) => {
     const isDarkMode = useColorScheme() === 'dark';
 
     const utilisateur = route.params;
@@ -17,27 +17,33 @@ const Detail = ({ route}) => {
         backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
     };
 
-    const [coord, setCoord] = useState({
-                accuracy: 17.70499992370605,
-                altitude: 225.59999084472656,
-                altitudeAccuracy: 1.1596063375473022,
-                heading: 144.20127868652344,
-                latitude: 42,
-                longitude: 42,
-                speed: 0.38775700330734253,
-            });
+    const [coord, setCoord] = useState(null);
 
-    useEffect(() => {
-            setCoord({
-                accuracy: 17.70499992370605,
-                altitude: 225.59999084472656,
-                altitudeAccuracy: 1.1596063375473022,
-                heading: 144.20127868652344,
-                latitude: parseFloat(utilisateur.address.geo.lat),
-                longitude: parseFloat(utilisateur.address.geo.lng),
-                speed: 0.38775700330734253,
-            });
-        },[]);
+    // useEffect(() => {
+    //         setCoord({
+    //             accuracy: 17.70499992370605,
+    //             altitude: 225.59999084472656,
+    //             altitudeAccuracy: 1.1596063375473022,
+    //             heading: 144.20127868652344,
+    //             latitude: parseFloat(utilisateur.address.geo.lat),
+    //             longitude: parseFloat(utilisateur.address.geo.lng),
+    //             speed: 0.38775700330734253,
+    //         });
+    //     },[]);
+
+    function pressButton() {
+        setCoord({
+            accuracy: 17.70499992370605,
+            altitude: 225.59999084472656,
+            altitudeAccuracy: 1.1596063375473022,
+            heading: 144.20127868652344,
+            latitude: parseFloat(utilisateur.address.geo.lat),
+            longitude: parseFloat(utilisateur.address.geo.lng),
+            speed: 0.38775700330734253,
+        })
+    }
+
+
 
 
 
@@ -58,6 +64,7 @@ const Detail = ({ route}) => {
                 </Text>
                 <Text>lat: {utilisateur.address.geo.lat}</Text>
                 <Text>lng: {utilisateur.address.geo.lng}</Text>
+                <Button title={"locate"} onPress={pressButton}></Button>
             </View>
 
 

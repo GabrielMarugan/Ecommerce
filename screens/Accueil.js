@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 import Header from '../components/Header';
 import Colors from '../Colors';
+import Notify from './Notify';
+
 
 const Acceuil = ({navigation}) => {
     const isDarkMode = useColorScheme() === 'dark'
@@ -27,19 +29,23 @@ const Acceuil = ({navigation}) => {
                         styles.container,
                     ]}
                 >
-                    <TouchableOpacity style={styles.button}>
-                        <Text style={styles.buttonTxt}> Conducteur </Text>
-                    </TouchableOpacity>
                     <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Passager')}>
-                        <Text style={styles.buttonTxt}>Passager</Text>
+                        <Text style={styles.buttonTxt}>Liste</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('File')}>
-                        <Text style={styles.buttonTxt}>File</Text>
+                        <Text style={styles.buttonTxt}>Fichier</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('GeolocationPage')}>
                         <Text style={styles.buttonTxt}>Geolocalisation</Text>
                     </TouchableOpacity>
+                    
                 </View>
+                <Notify style={[
+                    {
+                        backgroundColor: isDarkMode ? Colors.black : Colors.white,
+                    },
+                    styles.container,
+                ]} />
 
             </ScrollView >
         </SafeAreaView>
