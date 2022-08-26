@@ -43,12 +43,12 @@ const App = () => {
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <NavigationContainer>
         <Stack.Navigator /*screenOptions={{ headerShown: false }}*/>
-          <Stack.Screen name="Acceuil" component={Acceuil}></Stack.Screen>
-          <Stack.Screen name="Passager" component={Passager}></Stack.Screen>
-          <Stack.Screen name="Detail" component={Detail}></Stack.Screen>
-          <Stack.Screen name="File" component={File}></Stack.Screen>
-          <Stack.Screen name="CameraPage" component={CameraPage}></Stack.Screen>
-          <Stack.Screen name="GeolocationPage" component={GeolocationPage}></Stack.Screen>
+          <Stack.Screen name="Acceuil" component={Acceuil} />
+          <Stack.Screen name="Passager" component={Passager} />
+          <Stack.Screen name="Detail" component={Detail} />
+          <Stack.Screen name="File" component={File} />
+          <Stack.Screen name="CameraPage" component={CameraPage} />
+          <Stack.Screen name="GeolocationPage" component={GeolocationPage} />
         </Stack.Navigator>
       </NavigationContainer>
 
